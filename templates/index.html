@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AYUSH Health</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div class="container">
+        <!-- Main Heading -->
+        <h1 class="welcome-heading">Welcome to AYUSH</h1>
+        <div class="subtitle-line"<</div> <!-- Thin line below heading -->
+
+        <!-- Subtitle -->
+        <p class="subtitle">A - Ayurveda | Y - Yoga | U - Unani | S - Siddha | H - Homeopathy</p>
+
+        <!-- AYUSH Tiles Section -->
+        <div class="tile-container">
+            <div class="tile">
+                <img src="{{ url_for('static', filename='images/ayurveda.jpg') }}" alt="Ayurveda">
+                <p>Ayurveda</p>
+            </div>
+            <div class="tile">
+                <img src="{{ url_for('static', filename='images/yoga.jpg') }}" alt="Yoga">
+                <a href="{{ url_for('yoga') }}">Go to Yoga Flow</a>
+                <p>Yoga</p>
+            </div>
+            <div class="tile">
+                <img src="{{ url_for('static', filename='images/unani.jpg') }}" alt="Unani">
+                <p>Unani</p>
+            </div>
+            <div class="tile">
+                <img src="{{ url_for('static', filename='images/siddha.jpg') }}" alt="Siddha">
+                <p>Siddha</p>
+            </div>
+            <div class="tile">
+                <img src="{{ url_for('static', filename='images/homeopathy.jpg') }}" alt="Homeopathy">
+                <p>Homeopathy</p>
+            </div>
+        </div>
+
+        <!-- Buttons -->
+        <div class="button-container">
+            <a href="{{ url_for('login') }}" class="btn">Login</a>
+            <a href="{{ url_for('skip') }}" class="btn">Skip</a>
+        </div>
+    </div>
+
+</body>
+</html>

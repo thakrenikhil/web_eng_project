@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Yoga Flow</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+
+<body>
+    <!-- 🔍 Search Bar -->
+    <form method="POST" class="search-box">
+        <input type="text" name="search" placeholder="Search for an asana..." value="{{ query }}">
+        <button type="submit">Search</button>
+    </form>
+
+    <!-- 🎞 Video Carousel -->
+    <section class="carousel">
+        {% for video in videos %}
+        <iframe width="300" height="200" src="{{ video.url }}" frameborder="0" allowfullscreen></iframe>
+        {% endfor %}
+    </section>
+
+    <!-- 🧘 Asana Cards -->
+    <section class="asana-grid">
+        {% for asana in asanas %}
+        <div class="asana-card">
+            <img src="https://via.placeholder.com/150" alt="{{ asana }}">
+            <h4>{{ asana }}</h4>
+        </div>
+        {% endfor %}
+    </section>
+
+    <!-- 👩‍🏫 Trainer Section -->
+    <section class="trainers">
+        <h2>Meet Our Trainers</h2>
+        {% for trainer in trainers %}
+        <div class="trainer-card">
+            <h3>{{ trainer.name }}</h3>
+            <p>{{ trainer.price }}</p>
+            <button>Join Now</button>
+        </div>
+        {% endfor %}
+    </section>
+</body>
+</html>

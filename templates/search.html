@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search - AYUSH</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body class="search-page">
+
+    <!-- Search Container -->
+    <div class="search-container">
+        <h2>Search for AYUSH Information</h2>
+        
+        {% if error %}
+            <p class="error-message">{{ error }}</p>
+        {% endif %}
+        
+        <form action="{{ url_for('search') }}" method="POST">
+            <input type="text" name="query" class="search-input" placeholder="Enter a herb, yoga pose, or medicine..." required>
+            <button type="submit" class="search-btn">Search</button>
+        </form>
+    </div>
+
+    <!-- Subtitle Below Search Box -->
+    <p class="search-subtitle">Explore Ayurveda, Yoga, Unani, Siddha, and Homeopathy in one place.</p>
+
+</body>
+</html>
